@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dummy Checkout</title>
+  <title>Shop - Dummy Store</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Checkout Page</h1>
+<header>
+  <h1>🛒 Dummy Store</h1>
+  <a href="cart.html" class="cart-link">View Cart</a>
+</header>
 
-<form id="checkoutForm">
-  <label>Name:</label>
-  <input type="text" id="name" required><br><br>
+<div class="product-container">
 
-  <label>Email:</label>
-  <input type="email" id="email" required><br><br>
+  <div class="product-card">
+    <h2>Headphones 🎧</h2>
+    <p>$100</p>
+    <button onclick="addToCart('Headphones', 100)">Add to Cart</button>
+  </div>
 
-  <label>Address:</label>
-  <input type="text" id="address" required><br><br>
+  <div class="product-card">
+    <h2>Smart Watch ⌚</h2>
+    <p>$200</p>
+    <button onclick="addToCart('Smart Watch', 200)">Add to Cart</button>
+  </div>
 
-  <button type="submit">Place Order</button>
-</form>
+  <div class="product-card">
+    <h2>Bluetooth Speaker 🔊</h2>
+    <p>$150</p>
+    <button onclick="addToCart('Speaker', 150)">Add to Cart</button>
+  </div>
 
-<p id="successMessage"></p>
+</div>
 
 <script src="script.js"></script>
 </body>
