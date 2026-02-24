@@ -99,10 +99,20 @@ test.describe('Working with forms', () => {
   test('fill and submit the entire form', async ({ page }) => {
     await page.goto('/checkout.html');
 
-    // Fill all fields
+    // Fill shipping fields
     await page.locator('#name').fill('Jane Tester');
     await page.locator('#email').fill('jane@test.com');
+    await page.locator('#phone').fill('5551234567');
     await page.locator('#address').fill('456 Automation Ave');
+    await page.locator('#city').fill('New York');
+    await page.locator('#state').fill('NY');
+    await page.locator('#zip').fill('10001');
+
+    // Fill payment fields
+    await page.locator('#cardName').fill('Jane Tester');
+    await page.locator('#cardNumber').fill('4111 1111 1111 1111');
+    await page.locator('#expiry').fill('12/28');
+    await page.locator('#cvv').fill('123');
 
     // Submit by clicking the button
     await page.getByRole('button', { name: 'Place Order' }).click();

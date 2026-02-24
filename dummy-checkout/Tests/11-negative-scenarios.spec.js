@@ -41,11 +41,19 @@ test.describe('Negative Checkout Scenarios', () => {
 
     await page.locator('#name').fill('John Doe');
     await page.locator('#email').fill('not-an-email');  // invalid email
+    await page.locator('#phone').fill('5551234567');
     await page.locator('#address').fill('123 Street');
+    await page.locator('#city').fill('New York');
+    await page.locator('#state').fill('NY');
+    await page.locator('#zip').fill('10001');
+    await page.locator('#cardName').fill('John Doe');
+    await page.locator('#cardNumber').fill('4111 1111 1111 1111');
+    await page.locator('#expiry').fill('12/28');
+    await page.locator('#cvv').fill('123');
 
     await page.getByRole('button', { name: 'Place Order' }).click();
 
-    // Browser's built-in email validation should block submission
+    // Custom JS validation should block submission (invalid email)
     await expect(page).toHaveURL(/checkout/);
     await expect(page.getByText('Order Confirmed')).not.toBeVisible();
   });

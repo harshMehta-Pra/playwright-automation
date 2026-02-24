@@ -6,11 +6,53 @@
 </head>
 <body>
 
-<div class="success-box">
-  <h1>🎉 Order Confirmed!</h1>
-  <p>Thank you for shopping with us.</p>
-  <a href="index.html">Back to Home</a>
+<header>
+  <h1>Order Complete</h1>
+  <a href="index.html">Back to Store</a>
+</header>
+
+<div class="progress-bar">
+  <span class="progress-step completed"><span class="step-number">1</span> Shop</span>
+  <span class="progress-connector completed"></span>
+  <span class="progress-step completed"><span class="step-number">2</span> Cart</span>
+  <span class="progress-connector completed"></span>
+  <span class="progress-step completed"><span class="step-number">3</span> Checkout</span>
+  <span class="progress-connector completed"></span>
+  <span class="progress-step active"><span class="step-number">4</span> Confirmation</span>
 </div>
 
+<div class="success-container">
+  <div class="success-header">
+    <h1>Order Confirmed!</h1>
+    <p>Thank you for shopping with us.</p>
+    <p class="order-number">Order #<span id="orderNumber"></span></p>
+  </div>
+
+  <div class="order-details">
+    <div class="detail-section">
+      <h3>Items Ordered</h3>
+      <div id="orderItems"></div>
+    </div>
+
+    <div class="detail-section">
+      <h3>Shipping Address</h3>
+      <p id="orderAddress"></p>
+    </div>
+
+    <div class="detail-section">
+      <h3>Payment Method</h3>
+      <p id="orderPayment"></p>
+    </div>
+
+    <div class="detail-section">
+      <h3>Order Total</h3>
+      <p id="orderTotal" class="order-total-amount"></p>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-home-link">Back to Home</a>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

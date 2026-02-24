@@ -42,7 +42,15 @@ test.describe('Complete E2E Checkout Scenarios', () => {
     await test.step('Step 5: Fill checkout form', async () => {
       await page.locator('#name').fill('Alice Johnson');
       await page.locator('#email').fill('alice@test.com');
+      await page.locator('#phone').fill('5551234567');
       await page.locator('#address').fill('789 E2E Boulevard');
+      await page.locator('#city').fill('New York');
+      await page.locator('#state').fill('NY');
+      await page.locator('#zip').fill('10001');
+      await page.locator('#cardName').fill('Alice Johnson');
+      await page.locator('#cardNumber').fill('4111 1111 1111 1111');
+      await page.locator('#expiry').fill('12/28');
+      await page.locator('#cvv').fill('123');
     });
 
     await test.step('Step 6: Place order', async () => {
@@ -77,7 +85,15 @@ test.describe('Complete E2E Checkout Scenarios', () => {
     await page.getByRole('button', { name: 'Proceed to Checkout' }).click();
     await page.locator('#name').fill('Bob Smith');
     await page.locator('#email').fill('bob@test.com');
+    await page.locator('#phone').fill('5559876543');
     await page.locator('#address').fill('321 Multi Cart Lane');
+    await page.locator('#city').fill('Chicago');
+    await page.locator('#state').fill('IL');
+    await page.locator('#zip').fill('60601');
+    await page.locator('#cardName').fill('Bob Smith');
+    await page.locator('#cardNumber').fill('4111 1111 1111 1111');
+    await page.locator('#expiry').fill('12/28');
+    await page.locator('#cvv').fill('456');
     await page.getByRole('button', { name: 'Place Order' }).click();
 
     await expect(page.getByText('Order Confirmed')).toBeVisible();
@@ -106,7 +122,15 @@ test.describe('Complete E2E Checkout Scenarios', () => {
     await page.getByRole('button', { name: 'Proceed to Checkout' }).click();
     await page.locator('#name').fill('Carol Lee');
     await page.locator('#email').fill('carol@test.com');
+    await page.locator('#phone').fill('5555555555');
     await page.locator('#address').fill('555 Remove Street');
+    await page.locator('#city').fill('Austin');
+    await page.locator('#state').fill('TX');
+    await page.locator('#zip').fill('73301');
+    await page.locator('#cardName').fill('Carol Lee');
+    await page.locator('#cardNumber').fill('4111 1111 1111 1111');
+    await page.locator('#expiry').fill('12/28');
+    await page.locator('#cvv').fill('789');
     await page.getByRole('button', { name: 'Place Order' }).click();
 
     await expect(page.getByText('Order Confirmed')).toBeVisible();

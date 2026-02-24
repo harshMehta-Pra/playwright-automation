@@ -11,13 +11,30 @@
   <a href="index.html">Continue Shopping</a>
 </header>
 
-<div id="cartItems"></div>
+<div class="progress-bar">
+  <span class="progress-step completed"><span class="step-number">1</span> Shop</span>
+  <span class="progress-connector completed"></span>
+  <span class="progress-step active"><span class="step-number">2</span> Cart</span>
+  <span class="progress-connector"></span>
+  <span class="progress-step"><span class="step-number">3</span> Checkout</span>
+  <span class="progress-connector"></span>
+  <span class="progress-step"><span class="step-number">4</span> Confirmation</span>
+</div>
 
-<h2 id="totalAmount"></h2>
+<div class="cart-container">
+  <div id="cartItems"></div>
 
-<a href="checkout.html">
-  <button class="checkout-btn">Proceed to Checkout</button>
-</a>
+  <div id="emptyCart" class="empty-cart" style="display:none;">
+    <p>Your cart is empty</p>
+    <a href="index.html">Start Shopping</a>
+  </div>
+
+  <h2 id="totalAmount"></h2>
+
+  <a href="checkout.html">
+    <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+  </a>
+</div>
 
 <script src="script.js"></script>
 </body>
