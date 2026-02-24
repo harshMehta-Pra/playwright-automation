@@ -15,8 +15,8 @@ module.exports = defineConfig({
   // Retry failed tests 0 times (we want to see failures clearly)
   retries: 0,
 
-  // Reporter - shows results in terminal
-  reporter: 'html',
+  // Reporter - generates HTML report and always opens it after tests
+  reporter: [['html', { open: 'always' }]],
 
   use: {
     // Base URL so we can use relative paths in tests
